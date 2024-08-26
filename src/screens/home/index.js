@@ -1,18 +1,44 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { View, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome'; 
 import DATA from '../../Data/Data'; 
-import Bottomnav from '../../routes/bootomnavbar';
+import DATACLI from '../../Data/DataCliente';
+import styles from './styles';
 
 export default function Home() {
+  const navigation = useNavigation();
+
   return (
     <>
+      <View style={styles.headerContainer}>
+        <Image
+          source={require('../../assets/logo.png')}
+          style={styles.logo}
+          alt="Sua Empresa"
+        />
+        <TouchableOpacity
+          style={styles.iconButton}  // Adicionando o estilo para alinhar à direita
+          onPress={() => {
+            const cliente = DATACLI[0];
+            if (cliente && cliente.id) {
+              navigation.navigate('PerfilCliente', { id: cliente.id });
+            } else {
+              alert('Cliente não encontrado.');
+            }
+          }}
+        >
+          <Icon name="cog" size={30} color="#FFFFFF" />
+        </TouchableOpacity>
+      </View>
+
       <ScrollView>
-        <View>
+        <View style={styles.container}>
           {DATA.map((item) => (
             <TouchableOpacity
               key={item.id}
               style={styles.containerJogos}
-              onPress={() => alert(`${item.nomeProduto} selected`)} // Adicionei um alerta para testar se o item é selecionável
+              onPress={() => alert(`${item.nomeProduto} selected`)}
             >
               <Image
                 style={styles.images}
@@ -30,31 +56,3 @@ export default function Home() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  containerJogos: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-  },
-  images: {
-    width: 100,
-    height: 150,
-    borderRadius: 8,
-    marginRight: 10,
-  },
-  titulo: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  imgLoja: {
-    fontSize: 14,
-    color: '#555',
-  },
-  imgProduto: {
-    fontSize: 14,
-    color: '#999',
-  }
-});

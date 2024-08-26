@@ -5,6 +5,7 @@ import Cadastro from '../screens/cadastro';
 import Cadastro2 from '../screens/cadastro2';
 import Cadastro3 from '../screens/cadastro3';
 import EsqueceuSenha from '../screens/esqueceusenha';
+import PerfilCliente from '../screens/perfilcliente/index'
 import Bottomnav from './bootomnavbar'; 
 
 const Stack = createStackNavigator();
@@ -17,7 +18,9 @@ export default function Route() {
       <Stack.Screen name="Cadastro2" component={Cadastro2} />
       <Stack.Screen name="Cadastro3" component={Cadastro3} />
       <Stack.Screen name="EsqueceuSenha" component={EsqueceuSenha} />
+      <Stack.Screen name="PerfilCliente" component={PerfilCliente} />  
       <Stack.Screen name="Home" component={Bottomnav} />  
+  
     </Stack.Navigator>
   );
 }
