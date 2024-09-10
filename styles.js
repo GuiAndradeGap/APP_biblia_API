@@ -1,0 +1,102 @@
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f0f8ff',
+    padding: 20,
+  },
+  title: {
+    fontSize: 30,
+    color: '#2c3e50',
+    marginBottom: 20,
+    fontWeight: 'bold',
+    borderBottomWidth: 2,
+    borderBottomColor: '#2980b9',
+    paddingBottom: 10,
+    textAlign: 'center',
+  },
+  inputContainer: {
+    marginBottom: 30,
+    alignItems: 'center',
+  },
+  label: {
+    fontSize: 18,
+    marginBottom: 10,
+    color: '#34495e',
+  },
+  input: {
+    fontSize: 18,
+    padding: 12,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#b0bec5',
+    width: 250,
+    marginBottom: 15,
+    backgroundColor: '#ffffff',
+  },
+  select: {
+    fontSize: 18,
+    padding: 12,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#b0bec5',
+    backgroundColor: '#ecf0f1',
+    width: 250,
+    marginBottom: 15,
+  },
+  button: {
+    fontSize: 18,
+    paddingVertical: 12,
+    paddingHorizontal: 25,
+    borderRadius: 5,
+    backgroundColor: '#2980b9',
+    color: '#ffffff',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    overflow: 'hidden',
+  },
+  buttonText: {
+    color: '#ffffff',
+  },
+  resultContainer: {
+    marginTop: 30,
+    padding: 20,
+    backgroundColor: '#ecf0f1',
+    borderRadius: 10,
+    width: '100%',
+    maxWidth: 800,
+    alignItems: 'flex-start',
+  },
+  resultTitle: {
+    fontSize: 24,
+    color: '#2c3e50',
+    marginBottom: 10,
+  },
+  resultText: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  error: {
+    fontSize: 18,
+    color: '#e74c3c',
+    backgroundColor: '#fdecea',
+    padding: 10,
+    borderRadius: 5,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  success: {
+    fontSize: 18,
+    color: '#27ae60',
+    backgroundColor: '#eafaf1',
+    padding: 10,
+    borderRadius: 5,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+});
+
+export default styles;
